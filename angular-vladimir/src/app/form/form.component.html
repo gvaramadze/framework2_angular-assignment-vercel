@@ -1,0 +1,21 @@
+<div class="form-container">
+    <div class="form-card">
+      <h2>Contact Us</h2>
+      <form [formGroup]="feedbackForm" (ngSubmit)="onSubmit()">
+        <label>Name</label>
+        <input type="text" formControlName="name" [class.invalid]="isInvalid('name')" />
+        <div class="error" *ngIf="isInvalid('name')">Name is required</div>
+  
+        <label>Email</label>
+        <input type="email" formControlName="email" [class.invalid]="isInvalid('email')" />
+        <div class="error" *ngIf="isInvalid('email')">Valid email is required</div>
+  
+        <label>Message</label>
+        <textarea formControlName="message" [class.invalid]="isInvalid('message')"></textarea>
+        <div class="error" *ngIf="isInvalid('message')">Min 10 characters</div>
+  
+        <button type="submit">Submit</button>
+      </form>
+    </div>
+  </div>
+  
